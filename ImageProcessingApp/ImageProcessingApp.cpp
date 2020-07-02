@@ -13,12 +13,17 @@ using namespace cv;
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
+	if(argc !=2 ){
+		cout << "usage: ./imageprocessing ../TestImages/cat.jpg" << endl;
+		exit(0);
+	}
     std::cout << "OpenCV App Test !\n";
 	string image_lana = "D:\\Software/OpenCV/TestImages/lena.png";
 
-	string image_cat = "D:\\Software/OpenCV/TestImages/cat.jpg";
+	string image_cat = argv[1];//"D:\\Software/OpenCV/TestImages/cat.jpg";
+	cout<< "Image path: "<<image_cat << endl;
 
 	Mat imageMatLana;
 	Mat  imgCatMat;
